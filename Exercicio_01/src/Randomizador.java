@@ -24,33 +24,36 @@ public class Randomizador {
         return nomeString.toUpperCase();
     }
 
+    public String geraData() {
 
-    public String geraDiaMesData() {
-        final String diaData;
+        final String diaData = geraDiaData();
+        final String mesData = geraMesData();
+        final String anoData = geraAnoData();
 
-        final String mesData = geraDiaMesData();
-
-        if(mesData.equals("2")) {
-            if(mesData.)
-            int diaDataInt = 1 + r.nextInt(31 - 1);
-        }
-
-
+        return diaData + "/" + mesData + "/" + anoData;
     }
 
-    public String geraMesData(){
-        final String mesData;
+    private String geraAnoData() {
 
-        int mesDataInt = 1 + r.nextInt(12 - 1);
-        char mesDataChar = (char) mesDataInt;
-        mesData = Character.toString(mesDataChar);
-        
-        return mesData;
+        final int anoDataInt = 1 + r.nextInt(12 - 1);
+        final char anoDataChar = (char) anoDataInt;
+
+        return Character.toString(anoDataChar);
     }
 
-    public LocalDate geraDataNascimento() {
-        final LocalDate data = LocalDate.now();
+    private String geraMesData(){
 
-        return data;
+        final int mesDataInt = 1 + r.nextInt(12 - 1);
+        final char mesDataChar = (char) mesDataInt;
+
+        return Character.toString(mesDataChar);
     }
+
+    private String geraDiaData(){
+        final int diaDataInt = 1 + r.nextInt(12 - 1);
+        final char diaDataChar = (char) diaDataInt;
+
+        return Character.toString(diaDataChar);
+    }
+
 }
